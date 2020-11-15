@@ -1,0 +1,21 @@
+.service-description{
+font-family: Poppins;
+}
+.service-description img{
+    height: 80px;
+    margin-bottom: 25px;
+}
+.service-description h5{
+    text-align: center;
+     color: #275A53;
+     font-weight: 600;
+     line-height: 30px;
+}
+.service-description p{
+color: #606268;
+line-height:28px
+}
+.image-container{
+    width: 300px;
+    text-align: center;
+}
