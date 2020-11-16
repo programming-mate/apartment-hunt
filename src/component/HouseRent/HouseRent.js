@@ -71,7 +71,7 @@ const HouseRent = () => {
                 <h6 className='pt-5 mt-5' style={{ textAlign: 'center',color:'#275A53' }}>Service</h6>
                 <h1 style={{ textAlign: 'center', color: '#16322E',fontWeight:'700' }}>We're an agency tailored to all <br/> clients' needs that always delivers</h1>
             
-                <div className="pt-5 d-flex justify-content-between service-description">
+                <div className=" row pt-5 d-flex justify-content-between service-description">
                     <div className="col-md-4 ">
                         <div className="image-container">
                             <div style={{width:'150px',margin:'0 auto'}}>
