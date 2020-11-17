@@ -3,61 +3,22 @@ import HouseRentData from './HouseRentData';
 import apartment from '../../Imgaes/logos/apartment 1.png';
 import affordable from '../../Imgaes/logos/affordable 1.png';
 import lessee from '../../Imgaes/logos/lessee 1.png';
-import './HouseRent.css'
+import './HouseRent.css';
+import axios from 'axios';
+import {useState,useEffect} from 'react';
 
-const Data = [
-    {
-        houseName: 'Washington Avenue',
-        image: 'https://i.ibb.co/ch5D0tB/Rectangle-394.png',
-        address: 'Nasirabad H/S, Chattogram',
-        bedRoom: '3 Bedrooms',
-        bathRoom: '2 Bathroom',
-        price:'$194'
-    },
-    {
-        houseName: 'Family Apartment Three',
-        image: 'https://i.ibb.co/XL7FnHj/Rectangle-396.png',
-        address: 'Nasirabad H/S, Chattogram',
-        bedRoom: '3 Bedrooms',
-        bathRoom: '2 Bathroom',
-        price:'$356'
-    },
-    {
-        houseName: 'Gorgeous house',
-        image: 'https://i.ibb.co/YRNg6Sc/Rectangle-398.png',
-        address: 'Nasirabad H/S, Chattogram',
-        bedRoom: '3 Bedrooms',
-        bathRoom: '2 Bathroom',
-        price:'$256'
-    },
-    {
-        houseName: 'Luxury villa ',
-        image: 'https://i.ibb.co/F6rkLDv/Rectangle-403.png',
-        address: 'Nasirabad H/S, Chattogram',
-        bedRoom: '3 Bedrooms',
-        bathRoom: '2 Bathroom',
-        price:'$345'
-    },
-    {
-        houseName: 'Epic Huda Palacio',
-        image: 'https://i.ibb.co/f8ttMb1/Rectangle-404.png',
-        address: 'Nasirabad H/S, Chattogram',
-        bedRoom: '3 Bedrooms',
-        bathRoom: '2 Bathroom',
-        price:'$536'
-    },
-    {
-        houseName: 'Washington Avenue',
-        image: 'https://i.ibb.co/JBNNKCZ/Rectangle-405.png',
-        address: 'Nasirabad H/S, Chattogram',
-        bedRoom: '3 Bedrooms',
-        bathRoom: '2 Bathroom',
-        price:'$283'
-    },
 
-]
 
 const HouseRent = () => {
+    const [bookingData, setBookingData] = useState([]);
+
+useEffect(()=>{
+    const fetchData=async()=>{
+         const {data}=await axios.get(`https://mysterious-brushlands-60386.herokuapp.com/getData`)
+        setBookingData(data)
+    }
+    fetchData()
+}, [])
     return (
         <div style={{background:'#F1F6F4'}}>
             <div className="container py-5">
@@ -65,7 +26,7 @@ const HouseRent = () => {
                 <h1 style={{ textAlign: 'center', color: '#16322E',fontWeight:'700' }}>Discover the latest Rent <br /> available today</h1>
                 <div className="row">
                 {
-                    Data.map(data =><HouseRentData data={data}></HouseRentData>)    
+                    bookingData.map(data =><HouseRentData key={data._id} data={data}></HouseRentData>)    
                 }
                 </div>
                 <h6 className='pt-5 mt-5' style={{ textAlign: 'center',color:'#275A53' }}>Service</h6>

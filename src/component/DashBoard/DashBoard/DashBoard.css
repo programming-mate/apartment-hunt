@@ -1,0 +1,36 @@
+.side-contain{
+
+}
+.side-contain ul{}
+.side-contain ul li{
+    list-style: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.side-contain ul a:hover{
+    color: #275A53;
+}
+.side-contain ul a:active{
+    color: #275A53;
+}
+.side-contain ul a{
+    text-decoration: none;
+    color: #000;
+}
+table{
+    width: 90%;
+    border-collapse: collapse;
+    border-spacing: 0 15px;
+    background: #fff;
+    margin: 0px 30px 0px;
+    padding: 15px;
+    border-radius: 5px;
+}
+table thead tr{
+
+}
+table thead tr th{
+    background: #F5F6FA;
+    padding: 10px;
+    text-align: center;
+}
